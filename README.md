@@ -1,2 +1,9 @@
 # CODSOFT_TASKSNO
-for codsoft front end internship 
+For codsoft front end internship 
+
+# IN this i have used following language 
+```
+HTML
+JS
+CSS
+```
