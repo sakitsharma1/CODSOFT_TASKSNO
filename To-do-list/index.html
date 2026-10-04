@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>TaskFlow - Todo List</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div>
+          <h1>✓ TaskFlow</h1>
+          <p>Organize your day, one task at a time.</p>
+        </div>
+
+        <button id="themeBtn" class="theme-btn" title="Toggle dark mode">
+          🌙
+        </button>
+      </header>
+
+      <!-- Add Task Section -->
+      <section class="task-form-section">
+        <form id="taskForm">
+          <div class="input-row">
+            <div class="task-input">
+              <input
+                type="text"
+                id="taskInput"
+                placeholder="What needs to be done?"
+                maxlength="100"
+                autocomplete="off" />
+
+              <span id="errorMessage"></span>
+            </div>
+
+            <button type="submit" class="add-btn">+ Add Task</button>
+          </div>
+
+          <div class="options">
+            <div class="option">
+              <label for="category">Category</label>
+
+              <select id="category">
+                <option value="Personal">Personal</option>
+                <option value="Work">Work</option>
+                <option value="Study">Study</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="option">
+              <label for="priority">Priority</label>
+
+              <select id="priority">
+                <option value="Low">Low</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="High">High</option>
+              </select>
+            </div>
+
+            <div class="option">
+              <label for="dueDate">Due Date</label>
+
+              <input type="date" id="dueDate" />
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- Statistics -->
+      <section class="statistics">
+        <div class="stat-card">
+          <span class="stat-number" id="totalCount">0</span>
+          <span class="stat-label">Total</span>
+        </div>
+
+        <div class="stat-card pending">
+          <span class="stat-number" id="pendingCount">0</span>
+          <span class="stat-label">Pending</span>
+        </div>
+
+        <div class="stat-card completed">
+          <span class="stat-number" id="completedCount">0</span>
+          <span class="stat-label">Completed</span>
+        </div>
+      </section>
+
+      <!-- Search and Filters -->
+      <section class="controls">
+        <div class="search-box">
+          <span>🔍</span>
+
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search tasks..."
+            autocomplete="off" />
+        </div>
+
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+
+          <button class="filter-btn" data-filter="pending">Pending</button>
+
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+      </section>
+
+      <!-- Task List -->
+      <main>
+        <div id="taskList" class="task-list"></div>
+
+        <div id="emptyState" class="empty-state">
+          <div class="empty-icon">📋</div>
+
+          <h2>No tasks found</h2>
+
+          <p>Add a task to get started.</p>
+        </div>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
